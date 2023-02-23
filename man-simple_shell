@@ -1,0 +1,15 @@
+.TH simple_shell
+.SH NAME
+.B shell
+- standard command interpreter similar ro GNU Bourne-Again Shell (sh).
+.SH SYNOPSIS
+#include "shell.h"
+.PP
+.shell
+.PP
+The simple shell man-page
+
+DESCRIPTION
+
+AUTHOR
+Nkwor Jane and Hamdi Marbi. ALX. Cohort 11
