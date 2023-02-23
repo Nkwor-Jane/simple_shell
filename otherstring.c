@@ -24,7 +24,7 @@ char *_getenv(const char *name)
  */
 int _env(void)
 {
-	itn i;
+	int i;
 
 	for (i = 0; environ[i]; i++)
 		_puts(environ[i]);

@@ -7,17 +7,16 @@
 #include <signal.h>
 #include <sys/wait.h>
 #include <sys/stat.h>
-#include <fnctl.h>
+#include <fcntl.h>
 #include <string.h>
 #include <sys/types.h>
-#include <sys/type.h>
 
 extern char **environ;
 
 /*PROGRAM FLOW*/
 int prompt(void);
 char *_read(void);
-int *_fullpathbuffer(char **av, char *PATH, char *copy);
+char *_fullpathbuffer(char **av, char *PATH, char *copy);
 int builtins(char **av, char *buffer, int exitstatus);
 int _execprocess(char **av, char *buffer, char *fullpathbuffer);
 

@@ -17,11 +17,11 @@ char **tokenise(char *buffer)
 	av = malloc((wordcount + 1) * sizeof(char *));
 	if (av == NULL)
 		exit(1);
-	token strtok(buffer, delimiter);
+	token = strtok(buffer, delimiter);
 	while (token != NULL)
 	{
 		av[i] = _strdup(token);
-		token = strtok(NULL, deli iter);
+		token = strtok(NULL, delimiter);
 		i++;
 	}
 	av[i] = NULL;
@@ -83,6 +83,6 @@ char *_concat(char *tmp, char **av, char *tok)
 	_strcat(tmp, tok);
 	_strcat(tmp, "/");
 	_strcat(tmp, av[0]);
-	tmp[len - 1] = '\0';
+	tmp[length - 1] = '\0';
 	return (tmp);
 }

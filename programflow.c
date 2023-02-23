@@ -58,7 +58,7 @@ char *_fullpathbuffer(char **av, char *PATH, char *copy)
 {
 	char *pack = NULL, *fullpathbuffer = NULL, *concatstr = NULL;
 	static char tmp[256];
-	int PATHcount = 0, fullpathflag = 0, z = 0, toklen = 0;
+	int PATHcount = 0, fullpathflag = 0, z = 0, packlen = 0;
 	struct stat h;
 
 	copy = NULL;
@@ -67,7 +67,7 @@ char *_fullpathbuffer(char **av, char *PATH, char *copy)
 	pack = strtok(copy, ": =");
 	while (pack != NULL)
 	{
-		concatstr = _conact(tmp, av, pack);
+		concatstr = _concat(tmp, av, pack);
 		if (stat(concatstr, &h) == 0)
 		{
 			fullpathbuffer = concatstr;
@@ -160,7 +160,7 @@ int _execprocess(char **av, char *buffer, char *fullpathbuffer)
 	wait(&status);
 	if (WIFEXITED(status))
 	{
-		exitstatus = WEITSTATUS(status);
+		exitstatus = WEXITSTATUS(status);
 	}
 	for (i = 0; av[i]; i++)
 		free(av[i]);

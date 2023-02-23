@@ -22,19 +22,19 @@ int main(void)
 		buffer = _read();
 		if (*buffer != '\0')
 		{
-			av = tokenize(buffer);
+			av = tokenise(buffer);
 			if (av == NULL)
 			{
 				free(buffer);
 				continue;
 			}
 			fullpathbuffer = _fullpathbuffer(av, PATH, copy);
-			if (checkbuiltins(av, buffer, exitstatus) != 0)
+			if (builtins(av, buffer, exitstatus) != 0)
 				continue;
-			exitstatus = _forkprocess(av, buffer, fullpathbuffer);
+			exitstatus = _execprocess(av, buffer, fullpathbuffer);
 		}
 		else
-			free(buffer)
+			free(buffer);
 	}
 	return (0);
 }
