@@ -39,6 +39,27 @@ int _strlen(char *s)
 	return (p - s);
 }
 /**
+ * _splitstring - counts numbers of words in a string
+ * @str: pointer to string
+ * Return: number of words in a string
+ */
+int _splitstring(char *str)
+{
+	int i, search = 1, wordcount = 0;
+
+	for (i = 0; str[i]; i++)
+	{
+		if (str[i] != ' ' && search == 1)
+		{
+			wordcount += 1;
+			search = 0;
+		}
+		if (str[i + 1] == ' ')
+			search = 1;
+	}
+	return (wordcount);
+}
+/**
  * _strcmp - compares two strings
  * @s1: first  string
  * @s2: second string

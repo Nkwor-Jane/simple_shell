@@ -77,7 +77,7 @@ char *_fullpathbuffer(char **av, char *PATH, char *copy)
 		if (z < PATHcount - 2)
 		{
 			packlen = _strlen(pack);
-			if (pack[packlen + 1] == ":")
+			if (pack[packlen + 1] == ':')
 			{
 				if (stat(av[0], &h) == 0)
 				{

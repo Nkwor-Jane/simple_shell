@@ -38,12 +38,12 @@ int _splitPATH(char *str)
 
 	for (i = 0; str[i]; i++)
 	{
-		if (str[i] != ":" && search == 1)
+		if (str[i] != ':' && search == 1)
 		{
 			wordcount += 1;
 			search = 0;
 		}
-		if (str[i + 1] == ":")
+		if (str[i + 1] == ':')
 		{
 			search = 1;
 		}

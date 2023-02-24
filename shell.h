@@ -26,6 +26,7 @@ int _strlen(char *s);
 char *_strcat(char *dest, char *src);
 int _strcmp(const char *s1, const char *s2);
 int _strlen(char *s);
+int _splitstring(char *str);
 
 /* TOEKNISE AND PATH HELPER FUNCTIONS*/
 char **tokenise(char *buffer);
